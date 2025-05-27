@@ -9,6 +9,13 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            /* Set the second image (photo_1.jpg) as a static background */
+            background-image: url('Rastriya yuva Viksas Sangh_2019_page-0036.jpg'); /* Path to the second image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background static */
+            background-repeat: no-repeat;
+            /* Fallback background color in case the image fails to load */
             background-color: #f0f4f8;
         }
 
@@ -16,6 +23,8 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* Semi-transparent background for readability */
+            background: rgba(255, 255, 255, 0.85);
         }
 
         /* Navigation Bar */
@@ -155,14 +164,31 @@
 
         /* Center Banner */
         .center-banner {
-            text-align: center;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             margin: 20px 0;
         }
 
-        .banner-img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
+        .banner-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: moveText 10s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Card Section */
@@ -284,9 +310,9 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Adjusted for 2 images */
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            max-width: 220px; /* Adjusted width for 2 images */
+            max-width: 220px;
         }
 
         .gallery-item {
@@ -418,7 +444,7 @@
 
         <!-- Central Banner Image Section -->
         <div class="center-banner">
-            <img src="WhatsApp Image 2025-05-26 at 12.39.12.jpeg" alt="Betiya Nidhi Banner" class="banner-img">
+            <div class="banner-text">राष्ट्रीय युवा विकास संघ</div>
         </div>
 
         <!-- Card Section -->
@@ -485,11 +511,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="footer-section app-link">
+                <!-- <div class="footer-section app-link">
                     <h3>APP LINK</h3>
                     <p>Members can download the app from the link below and get started.</p>
                     <a href="#" class="download-button">⬇ DOWNLOAD</a>
-                </div>
+                </div> -->
             </div>
             <hr class="footer-line">
             <p class="footer-bottom">© Copyright 2021 National Youth Organization Development</p>
